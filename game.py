@@ -2,7 +2,6 @@ import pygame
 import time
 import random
 
-
 def game_loop(window):
     clock = pygame.time.Clock()
     stop = False
@@ -59,6 +58,9 @@ def game_loop(window):
                 oldColor = color
                 while color == oldColor:
                     color = random.choice(colors)
+
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_c:
+                painted.fill((0, 0, 0))
         
         
         circle_coords[0] = min(max(circle_coords[0] + velocity[0], circle_radius), 500 - circle_radius)
